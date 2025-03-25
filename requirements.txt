@@ -5,3 +5,7 @@ spacy
 
 matplotlib
 pandas
+
+torch
+torchvision
+torchaudio
