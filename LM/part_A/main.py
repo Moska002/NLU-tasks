@@ -46,6 +46,7 @@ if __name__ == "__main__":
     patience = 3
     losses_train = []
     losses_dev = []
+    perplexity_dev = []
     sampled_epochs = []
     best_ppl = math.inf
     best_model = None
@@ -58,6 +59,7 @@ if __name__ == "__main__":
             losses_train.append(np.asarray(loss).mean())
             ppl_dev, loss_dev = eval_loop(dev_loader, criterion_eval, model)
             losses_dev.append(np.asarray(loss_dev).mean())
+            perplexity_dev.append(ppl_dev)
             pbar.set_description("PPL: %f" % ppl_dev)
             if  ppl_dev < best_ppl: # the lower, the better
                 best_ppl = ppl_dev
@@ -75,4 +77,4 @@ if __name__ == "__main__":
     save_model(best_model, "model.pt")
 
     plot_loss(sampled_epochs, losses_train, losses_dev, "loss.png")
-    plot_perplexity(losses_dev, sampled_epochs, "perplexity.png")
+    plot_perplexity(sampled_epochs, perplexity_dev, "perplexity.png")
