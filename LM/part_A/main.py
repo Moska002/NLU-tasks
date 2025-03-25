@@ -9,7 +9,6 @@ from model import *
 import torch.optim as optim
 from tqdm import tqdm
 import copy
-import os
 
 if __name__ == "__main__":
     # Write the code to load the datasets and to run your functions
