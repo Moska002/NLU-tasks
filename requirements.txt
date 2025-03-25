@@ -6,6 +6,6 @@ spacy
 matplotlib
 pandas
 
-pytorch
+torch
 torchvision
 torchaudio
