@@ -74,5 +74,5 @@ if __name__ == "__main__":
     print('Test perplexity: ', final_ppl)
     save_model(best_model, "model.pt")
 
-    plot_loss(losses_train, losses_dev, sampled_epochs, "loss.png")
+    plot_loss(sampled_epochs, losses_train, losses_dev, "loss.png")
     plot_perplexity(losses_dev, sampled_epochs, "perplexity.png")
